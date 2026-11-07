@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Khánh Hà 💖</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Hiệu ứng trái tim nhỏ đung đưa ở nền */
+        .bg-heart {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.5;
+            animation: swayBg 3s ease-in-out infinite alternate;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes swayBg {
+            0% { transform: translateY(0) rotate(-15deg) scale(0.9); }
+            100% { transform: translateY(-20px) rotate(15deg) scale(1.1); }
+        }
+
+        /* Trái tim chính đung đưa ở giữa */
+        .main-heart {
+            font-size: 90px;
+            display: inline-block;
+            animation: swayHeart 1.8s ease-in-out infinite alternate;
+            filter: drop-shadow(0 8px 20px rgba(220, 20, 60, 0.35));
+            margin-bottom: 25px;
+            user-select: none;
+        }
+
+        @keyframes swayHeart {
+            0% { transform: rotate(-14deg) scale(0.95); }
+            100% { transform: rotate(14deg) scale(1.08); }
+        }
+
+        /* Khung chứa nội dung chữ */
+        .content-area {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 550px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Dòng chữ 1: "t thích m lắm" chuyển động */
+        .text-like {
+            font-size: 34px;
+            font-weight: bold;
+            color: #d81b60;
+            text-shadow: 0 3px 10px rgba(255, 255, 255, 0.8);
+            display: none;
+            animation: popAndWave 1.5s ease-in-out infinite alternate;
+            margin-bottom: 15px;
+        }
+
+        @keyframes popAndWave {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-8px) scale(1.06); }
+        }
+
+        /* Dòng chữ 2: "Khánh Hà" */
+        .text-name {
+            font-size: 46px;
+            font-weight: 900;
+            color: #ffffff;
+            background: linear-gradient(45deg, #ff1744, #ff616f);
+            padding: 8px 30px;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.4);
+            display: none;
+            animation: zoomAppear 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            margin-bottom: 20px;
+        }
+
+        @keyframes zoomAppear {
+            0% { opacity: 0; transform: scale(0.3); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Dòng chữ 3: Lời tỏ tình cuối cùng */
+        .text-final {
+            font-size: 24px;
+            line-height: 1.6;
+            font-weight: bold;
+            color: #b0003a;
+            background: rgba(255, 255, 255, 0.88);
+            padding: 25px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.25);
+            display: none;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Nút bấm màu đỏ tim */
+        .heart-btn {
+            margin-top: 20px;
+            padding: 14px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(45deg, #d50000, #ff1744);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(213, 0, 0, 0.45);
+            transition: transform 0.2s, box-shadow 0.2s;
+            z-index: 2;
+        }
+
+        .heart-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(213, 0, 0, 0.6);
+        }
+
+        .heart-btn:active {
+            transform: scale(0.96);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Các trái tim đung đưa xung quanh nền -->
+    <div class="bg-heart" style="top: 12%; left: 15%; animation-delay: 0s;">💗</div>
+    <div class="bg-heart" style="top: 20%; right: 18%; animation-delay: 0.5s;">💖</div>
+    <div class="bg-heart" style="bottom: 18%; left: 20%; animation-delay: 1s;">💕</div>
+    <div class="bg-heart" style="bottom: 15%; right: 15%; animation-delay: 1.5s;">💓</div>
+    <div class="bg-heart" style="top: 50%; left: 8%; animation-delay: 0.8s;">💘</div>
+    <div class="bg-heart" style="top: 48%; right: 8%; animation-delay: 1.2s;">💝</div>
+
+    <!-- Trái tim lớn đung đưa ở giữa -->
+    <div class="main-heart">❤️</div>
+
+    <!-- Khu vực hiển thị chữ -->
+    <div class="content-area">
+        <div id="textLike" class="text-like">t thích m lắm</div>
+        <div id="textName" class="text-name">Khánh Hà</div>
+        <div id="textFinal" class="text-final">
+            t thích m, Khánh Hà, t thích m được 3 năm rồi từ cái nhìn đầu tiên nhưng t k dám tiếp cận
+        </div>
+    </div>
+
+    <!-- Các nút bấm theo từng bước -->
+    <button id="btnStart" class="heart-btn" onclick="buoc1()">Bắt đầu</button>
+    <button id="btnName" class="heart-btn hidden" onclick="buoc2()">tên?</button>
+    <button id="btnEnd" class="heart-btn hidden" onclick="buoc3()">Kết thúc</button>
+
+    <script>
+        function buoc1() {
+            // Ẩn nút "Bắt đầu", hiện chữ "t thích m lắm"
+            document.getElementById('btnStart').classList.add('hidden');
+            const textLike = document.getElementById('textLike');
+            textLike.style.display = 'block';
+
+            // Sau 0.8 giây hiện tiếp nút "tên?"
+            setTimeout(() => {
+                document.getElementById('btnName').classList.remove('hidden');
+            }, 800);
+        }
+
+        function buoc2() {
+            // Ẩn nút "tên?", hiện chữ "Khánh Hà"
+            document.getElementById('btnName').classList.add('hidden');
+            const textName = document.getElementById('textName');
+            textName.style.display = 'inline-block';
+
+            // Sau 0.8 giây hiện tiếp nút "Kết thúc"
+            setTimeout(() => {
+                document.getElementById('btnEnd').classList.remove('hidden');
+            }, 800);
+        }
+
+        function buoc3() {
+            // Ẩn nút "Kết thúc" và 2 dòng chữ trước để nổi bật câu cuối
+            document.getElementById('btnEnd').classList.add('hidden');
+            document.getElementById('textLike').style.display = 'none';
+            document.getElementById('textName').style.display = 'none';
+
+            // Hiện dòng chữ tỏ tình cuối cùng
+            const textFinal = document.getElementById('textFinal');
+            textFinal.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
